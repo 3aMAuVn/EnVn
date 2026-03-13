@@ -1,0 +1,147 @@
+// _sass/components/_lang-switcher.scss
+
+// ── Lang link (inline text links) ────────────────────────────────
+.lang-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+.lang-flag-badge {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 16px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(15,23,42,.08);
+  font-size: 10px;
+  overflow: hidden;
+  transform: translateY(1px);
+}
+
+.lang-flag-svg {
+  width: 16px; height: 16px;
+  display: block;
+  flex: 0 0 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(15,23,42,.08);
+}
+
+.lang-flag-icon {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  flex: 0 0 16px;
+  box-shadow: 0 0 0 1px rgba(15,23,42,.08);
+}
+
+// ── Nav dropdown switcher ─────────────────────────────────────────
+.lang-menu {
+  position: relative;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(15,23,42,.14);
+  font-weight: 1000;
+  font-size: $nav-font;
+  cursor: pointer;
+  color: $ink;
+  transition: background .12s ease, border-color .12s ease;
+
+  &:hover {
+    background: rgba(11,94,215,.08);
+    border-color: rgba(11,94,215,.18);
+  }
+
+  @media (max-width: $bp-xs) {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+}
+
+.lang-btn-text { line-height: 1; }
+
+.lang-btn-caret {
+  font-size: 12px;
+  opacity: .9;
+  line-height: 1;
+}
+
+.lang-flag-svg-rect {
+  width: 30px; height: 20px;
+  display: inline-block;
+  flex: 0 0 30px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 1px 2px rgba(0,0,0,.10);
+  vertical-align: middle;
+
+  @media (max-width: $bp-xs) { width: 28px; height: 18px; flex-basis: 28px; }
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 170px;
+  background: #ffffff;
+  border: 1px solid rgba(11,94,215,.18);
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(2,6,23,.14);
+  padding: 10px;
+  z-index: 999;
+
+  @media (max-width: $bp-xs) { min-width: 156px; padding: 8px; }
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid rgba(15,23,42,.14);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0b3b91;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+
+  & + & { margin-top: 8px; }
+
+  &:hover {
+    background: rgba(11,94,215,.06);
+    border-color: rgba(11,94,215,.22);
+    transform: translateY(-1px);
+  }
+
+  &.active {
+    background: rgba(11,94,215,.12);
+    border-color: rgba(11,94,215,.35);
+    box-shadow: 0 8px 16px rgba(11,94,215,.08);
+  }
+
+  @media (max-width: $bp-xs) {
+    padding: 10px 12px;
+    font-size: 15px;
+    gap: 10px;
+  }
+}
+
+.lang-label { line-height: 1; }

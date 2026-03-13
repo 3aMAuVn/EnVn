@@ -1,0 +1,241 @@
+// _sass/components/_cards.scss
+
+// ── Generic card (3-col grid) ─────────────────────────────────────
+.card {
+  background: rgba(255,255,255,.86);
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: 20px;
+
+  h3 {
+    margin: 0 0 10px;
+    color: $brand2;
+    font-size: 18px;
+    font-weight: 1000;
+  }
+
+  p {
+    margin: 0;
+    color: $muted;
+    font-weight: 650;
+    line-height: 1.7;
+  }
+}
+
+// ── Mini card (used inline on home accordions) ────────────────────
+.mini-card {
+  background: rgba(255,255,255,.86);
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: 16px;
+
+  h3 {
+    margin: 0 0 8px;
+    color: #7a4a00;
+    font-size: 18px;
+    font-weight: 1000;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+    color: $muted;
+    font-weight: 650;
+    line-height: 1.7;
+  }
+}
+
+// ── "What makes us different" diff cards ─────────────────────────
+.diff-wrap {
+  background: rgba(255,255,255,.72);
+  border: 1px solid $line;
+  border-radius: calc(#{$radius} + 6px);
+  box-shadow: $shadow2;
+  padding: 18px;
+}
+
+.diff-head {
+  text-align: center;
+  padding: 8px 6px 6px;
+}
+
+.diff-title {
+  margin: 0 0 8px;
+  font-size: 34px;
+  font-weight: 1100;
+  letter-spacing: -0.4px;
+  color: $brand2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  line-height: 1.15;
+
+  .spark {
+    font-size: 22px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    background: rgba(245,158,11,.15);
+    border: 1px solid rgba(245,158,11,.28);
+  }
+
+  @media (max-width: $bp-sm) { font-size: 28px; }
+}
+
+.diff-sub {
+  margin: 0;
+  color: $muted;
+  font-weight: 700;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.diff-note {
+  margin: 14px auto 16px;
+  max-width: 980px;
+  background: rgba(11,94,215,.06);
+  border: 1px solid rgba(11,94,215,.22);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  strong { color: $brand2; font-weight: 1100; }
+
+  .note-text {
+    color: $muted;
+    font-weight: 700;
+    line-height: 1.55;
+    flex: 1 1 520px;
+    min-width: 240px;
+  }
+
+  .note-link {
+    white-space: nowrap;
+    font-weight: 1100;
+    text-decoration: none;
+    color: $brand2;
+    border-bottom: 1px solid rgba(11,94,215,.30);
+    &:hover { border-bottom-color: rgba(11,94,215,.60); }
+  }
+}
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+
+  @media (max-width: $bp-xl) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media (max-width: $bp-sm)  { grid-template-columns: 1fr; }
+}
+
+.diff-card {
+  background: rgba(255,248,231,.92);
+  border: 1px solid rgba(245,158,11,.30);
+  border-radius: calc(#{$radius} + 6px);
+  padding: 14px;
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+  min-height: 170px;
+
+  .diff-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    margin: 0;
+    color: #cc7a00;
+    font-size: 18px;
+    font-weight: 1100;
+    line-height: 1.15;
+  }
+
+  p {
+    margin: 0;
+    color: $muted;
+    font-weight: 700;
+    line-height: 1.65;
+  }
+}
+
+.diff-ico {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(245,158,11,.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex: 0 0 42px;
+}
+
+// ── Maths Club summary card ───────────────────────────────────────
+.club-summary-wrap {
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(11,94,215,.14);
+  border-radius: 24px;
+  padding: 26px 22px;
+  box-shadow: $shadow2;
+}
+
+.club-summary-title {
+  margin: 0 0 10px;
+  text-align: center;
+  color: $brand2;
+  font-size: 28px;
+  font-weight: 1100;
+
+  @media (max-width: 900px) { font-size: 24px; }
+}
+
+.club-summary-desc {
+  margin: 0 auto 18px;
+  max-width: 980px;
+  text-align: center;
+  color: #334155;
+  font-weight: 650;
+  font-size: 17px;
+  line-height: 1.7;
+
+  @media (max-width: 900px) { font-size: 16px; }
+}
+
+.club-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+.club-summary-pill {
+  background: #eef3fb;
+  border: 1px solid rgba(11,94,215,.16);
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: #1f2937;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 650;
+
+  strong { font-weight: 1000; color: #111827; }
+}
+
+.club-summary-cta {
+  margin: 18px 0 0;
+  text-align: center;
+}

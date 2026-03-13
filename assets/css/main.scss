@@ -1,0 +1,41 @@
+---
+---
+// assets/css/main.scss
+// Jekyll requires the triple-dashes above to process this file.
+
+// ── 1. Tokens / variables ──────────────────────────────────────────
+@import "base/variables";
+
+// ── 2. Reset & base ────────────────────────────────────────────────
+@import "base/reset";
+@import "base/typography";
+
+// ── 3. Layout ──────────────────────────────────────────────────────
+@import "layout/topbar";
+@import "layout/hero";
+@import "layout/footer";
+@import "layout/grid";
+
+// ── 4. Components ──────────────────────────────────────────────────
+@import "components/buttons";
+@import "components/cards";
+@import "components/accordion";
+@import "components/badges";
+@import "components/forms";
+@import "components/lang-switcher";
+@import "components/quicklinks";
+@import "components/modal";
+
+// ── 5. Page-specific overrides ────────────────────────────────────
+@import "pages/home";
+@import "pages/programs";
+@import "pages/pricing";
+@import "pages/mathclub";
+@import "pages/about";
+@import "pages/policies";
+@import "pages/contact";
+@import "pages/register";
+@import "pages/demo";
+
+// ── 6. Utilities / overflow fix ───────────────────────────────────
+@import "base/utilities";

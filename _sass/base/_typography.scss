@@ -1,0 +1,36 @@
+// _sass/base/_typography.scss
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p { margin: 0 0 1em; }
+
+// Gradient headings (used on some pages)
+.grad-heading {
+  background: linear-gradient(135deg, $brand2 0%, $brand 60%, darken($accent, 8%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Emoji override — prevents gradient bleed on emoji inside grad-headings
+.emoji {
+  color: initial !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  margin-right: 6px;
+}
+
+.link-strong {
+  color: $brand2;
+  font-weight: 1000;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(11,94,215,.30);
+
+  &:hover { border-bottom-color: rgba(11,94,215,.60); }
+}

@@ -1,0 +1,848 @@
+---
+layout: default
+title: "Maths Club Registration | Magic Math Master"
+description: "Register for the Magic Math Master Maths Club."
+page_styles: |
+  /* =========================================================
+         Club-register page ONLY
+         (Do not redefine .container/.btn/.topbar here — use style.css)
+         ========================================================= */
+  
+      /* Make sure nothing can push the page wider */
+      .club-shell, .club-shell * { max-width: 100%; }
+      .club-shell > * { min-width: 0; }
+      .club-card, .form-card, .info-card, .success-card { min-width: 0; }
+  
+      /* Card look (match your site style but keep inside container) */
+      .club-shell{
+        display: grid;
+        gap: 16px;
+      }
+  
+      .club-card,
+      .form-card,
+      .info-card,
+      .success-card{
+        background: rgba(255,255,255,.86);
+        border: 1px solid rgba(15,23,42,.10);
+        border-radius: 22px;
+        box-shadow: var(--shadow2);
+        padding: 18px;
+        overflow: hidden; /* prevents inner elements from spilling out */
+      }
+  
+      .section-title{
+        margin: 0 0 8px;
+        font-size: 26px;
+        font-weight: 1000;
+        letter-spacing: -0.3px;
+        color: var(--brand2);
+      }
+  
+      .section-sub{
+        margin: 0;
+        color: rgba(15,23,42,.72);
+        font-weight: 650;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+      }
+  
+      /* Stream chooser */
+      .club-options{
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+      @media (max-width: 980px){
+        .club-options{ grid-template-columns: 1fr; }
+      }
+  
+      .club-option{
+        position: relative;
+        border: 1px solid rgba(15,23,42,.10);
+        border-radius: 18px;
+        background: rgba(255,255,255,.86);
+        padding: 16px;
+        cursor: pointer;
+        transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+        min-width: 0;
+      }
+      .club-option:hover{
+        transform: translateY(-1px);
+        box-shadow: 0 12px 24px rgba(2, 6, 23, .08);
+      }
+      .club-option input[type="radio"]{
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 18px;
+        height: 18px;
+        accent-color: var(--brand);
+        cursor: pointer;
+      }
+      .club-option.active{
+        border-color: rgba(11,94,215,.35);
+        background: rgba(11,94,215,.06);
+        box-shadow: 0 12px 26px rgba(11,94,215,.10);
+      }
+      .club-badge{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: rgba(245,158,11,.14);
+        border: 1px solid rgba(245,158,11,.22);
+        font-size: 20px;
+        margin-bottom: 10px;
+        flex: 0 0 auto;
+      }
+      .club-option h3{
+        margin: 0 0 8px;
+        font-size: 18px;
+        font-weight: 1000;
+        color: rgba(15,23,42,.92);
+        overflow-wrap: anywhere;
+      }
+      .club-option p{
+        margin: 0;
+        color: rgba(15,23,42,.72);
+        font-weight: 650;
+        line-height: 1.65;
+        overflow-wrap: anywhere;
+      }
+  
+      /* Primary subgroup */
+      .subgroup-wrap{
+        margin-top: 16px;
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(11,94,215,.06);
+        border: 1px solid rgba(11,94,215,.18);
+        display: none;
+      }
+      .subgroup-wrap.show{ display: block; }
+  
+      .subgroup-title{
+        margin: 0 0 10px;
+        color: var(--brand2);
+        font-weight: 1000;
+      }
+      .subgroup-grid{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      @media (max-width: 760px){
+        .subgroup-grid{ grid-template-columns: 1fr; }
+      }
+      .subgroup-item{
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        background: rgba(255,255,255,.86);
+        border: 1px solid rgba(15,23,42,.10);
+        border-radius: 16px;
+        padding: 12px;
+        cursor: pointer;
+        min-width: 0;
+      }
+      .subgroup-item input{
+        margin-top: 3px;
+        accent-color: var(--brand);
+        flex: 0 0 auto;
+      }
+      .subgroup-item span{ min-width: 0; }
+      .subgroup-item b{
+        display: block;
+        margin-bottom: 2px;
+        font-weight: 1000;
+        color: rgba(15,23,42,.92);
+      }
+      .subgroup-item span{
+        color: rgba(15,23,42,.72);
+        font-weight: 650;
+        line-height: 1.55;
+        overflow-wrap: anywhere;
+      }
+  
+      /* Form fields */
+      .two-col{
+        margin-top: 14px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      @media (max-width: 900px){
+        .two-col{ grid-template-columns: 1fr; }
+      }
+  
+      .field-group label{
+        display: block;
+        margin-bottom: 6px;
+        font-size: 14px;
+        font-weight: 900;
+        color: rgba(15,23,42,.90);
+      }
+      .field-group input,
+      .field-group select,
+      .field-group textarea{
+        width: 100%;
+        max-width: 100%;
+        border: 1px solid rgba(15,23,42,.10);
+        border-radius: 14px;
+        padding: 12px 12px;
+        background: rgba(255,255,255,.92);
+        font: inherit;
+        color: var(--ink);
+      }
+      .field-group textarea{ min-height: 110px; resize: vertical; }
+  
+      /* Tools row */
+      .register-tools{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+        margin: 14px 0 12px;
+      }
+      .register-tools .tool-left,
+      .register-tools .tool-right{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        min-width: 0;
+      }
+      @media (max-width: 760px){
+        .register-tools .tool-left,
+        .register-tools .tool-right{ width: 100%; }
+        .register-tools .btn{ width: 100%; }
+      }
+  
+      /* Table: ALWAYS scroll inside wrapper, never push page */
+      .table-wrap{
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid rgba(15,23,42,.10);
+        border-radius: 18px;
+        background: rgba(255,255,255,.90);
+      }
+      table{
+        border-collapse: collapse;
+        width: max(980px, 100%); /* desktop fits; mobile scrolls */
+      }
+      thead{ background: rgba(11,94,215,.06); }
+      th, td{
+        border-bottom: 1px solid rgba(15,23,42,.10);
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th{
+        font-size: 13px;
+        font-weight: 900;
+        white-space: nowrap;
+        color: rgba(15,23,42,.90);
+      }
+      td input, td select{
+        width: 100%;
+        max-width: 100%;
+        border: 1px solid rgba(15,23,42,.10);
+        border-radius: 12px;
+        padding: 10px;
+        background: rgba(255,255,255,.96);
+        font: inherit;
+        min-width: 0;
+      }
+      .row-number{
+        text-align: center;
+        font-weight: 1000;
+        color: rgba(15,23,42,.90);
+        min-width: 40px;
+      }
+      .remove-btn{
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        padding: 10px 12px;
+        background: rgba(220,38,38,.10);
+        color: #b91c1c;
+        font-weight: 900;
+        cursor: pointer;
+      }
+  
+      /* Consent */
+      .consent-box{
+        margin-top: 16px;
+        padding: 16px;
+        border: 1px solid rgba(15,23,42,.10);
+        border-radius: 18px;
+        background: rgba(255,255,255,.78);
+        display: grid;
+        gap: 14px;
+      }
+      .check-line{
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        color: rgba(15,23,42,.72);
+        font-weight: 650;
+        line-height: 1.65;
+        min-width: 0;
+      }
+      .check-line input{
+        margin-top: 3px;
+        accent-color: var(--brand);
+        flex: 0 0 auto;
+      }
+      .small-note{
+        margin: 0;
+        color: rgba(15,23,42,.72);
+        font-weight: 650;
+        line-height: 1.65;
+        font-size: 14px;
+        overflow-wrap: anywhere;
+      }
+  
+      /* Info grid */
+      .info-grid{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+      @media (max-width: 980px){
+        .info-grid{ grid-template-columns: 1fr; }
+      }
+  
+      /* Success */
+      .success-card{
+        display: none;
+        border-color: rgba(34,197,94,.28);
+        background: rgba(34,197,94,.08);
+      }
+      .success-card strong{ font-weight: 1000; }
+  
+      /* ===== Nice Thank-you Modal (Club Register) ===== */
+      #clubThankYouModal{
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,.45);
+        z-index: 9999;
+        padding: 18px;
+      }
+  
+      #clubThankYouModal .modal-card{
+        background: #fff;
+        border-radius: 18px;
+        padding: 22px;
+        width: min(440px, 100%);
+        text-align: center;
+        box-shadow: 0 18px 40px rgba(0,0,0,.22);
+        border: 1px solid rgba(0,0,0,.08);
+      }
+  
+      #clubThankYouModal .modal-title{
+        margin: 0 0 10px;
+        font-size: 22px;
+        font-weight: 1000;
+        color: var(--brand2); /* coloured title */
+      }
+  
+      #clubThankYouModal .modal-text{
+        margin: 0 0 14px;
+        color: rgba(15,23,42,.72);
+        font-weight: 650;
+        line-height: 1.6;
+      }
+---
+
+<main>
+    <div class="container">
+      <!-- HERO uses style.css -->
+      <section class="hero-card" aria-label="Maths Club register hero">
+        <img class="hero-banner" src="{{ site.baseurl }}/assets/banner.png" alt="Magic Math Master banner" loading="eager" />
+        <div class="hero-copy">
+          <h1 class="hero-title">Register for Maths Club</h1>
+          <p class="hero-desc">
+            Choose <strong>one club stream</strong> and enrol <strong>one or more students</strong> in one booking.
+            Maths Club is online and students can join from anywhere.
+          </p>
+
+          <div class="hero-pills">
+            <span class="hero-pill">Club only</span>
+            <span class="hero-pill">Multi-student booking</span>
+            <span class="hero-pill">Flexible online participation</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-amber" href="#club-register">Register now</a>
+            <a class="btn btn-secondary" href="{{ '/pricing.html#maths-club-fee' | relative_url }}">View fees</a>
+            <a class="btn btn-outline" href="{{ '/mathclub.html' | relative_url }}">Maths Club info</a>
+            <a class="btn btn-success" href="{{ '/enquiry.html' | relative_url }}">Tutoring enquiry</a>
+          </div>
+
+          <p class="section-sub" style="margin-top:14px;">
+            Questions before registering? Contact us via
+            <a class="link-strong" href="https://wa.me/61402204599" target="_blank" rel="noopener">WhatsApp</a>
+            or
+            <a class="link-strong" href="mailto:magicmathmasters@gmail.com?subject=Maths%20Club%20Registration%20Question">email</a>
+            — we’re happy to help.
+          </p>
+        </div>
+      </section>
+
+      <section id="club-register" class="anchor-target">
+        <div class="club-shell">
+
+          <div class="club-card">
+            <h2 class="section-title">Choose your Maths Club stream</h2>
+            <p class="section-sub">
+              Select <b>one</b> club stream for this booking.
+              If you choose <b>Primary Maths Club</b>, please also choose the correct sub-group so we can place students accurately.
+            </p>
+
+            <div class="club-options" id="clubOptions">
+              <label class="club-option" for="club-prep6">
+                <span class="club-badge" aria-hidden="true">🌱</span>
+                <h3>Primary Maths Club</h3>
+                <p>Strong foundations, number sense, fluency, and confidence-building problem solving for younger learners.</p>
+                <input type="radio" id="club-prep6" name="clubStream" value="Primary Maths Club" required>
+              </label>
+
+              <label class="club-option" for="club-710">
+                <span class="club-badge" aria-hidden="true">🧩</span>
+                <h3>Years 7–10 Maths Club</h3>
+                <p>Steady skill building, reasoning, and structured weekly practice for middle and lower secondary students.</p>
+                <input type="radio" id="club-710" name="clubStream" value="Years 7-10 Maths Club" required>
+              </label>
+
+              <label class="club-option" for="club-1112">
+                <span class="club-badge" aria-hidden="true">🎓</span>
+                <h3>Senior Maths Club</h3>
+                <p>Higher-level review, structured revision, and exam-style practice for Years 11–12 students.</p>
+                <input type="radio" id="club-1112" name="clubStream" value="Years 11-12 Maths Club" required>
+              </label>
+            </div>
+
+            <div class="subgroup-wrap" id="prepSubgroupWrap">
+              <p class="subgroup-title">Primary sub-group (required for Primary Maths Club only)</p>
+              <div class="subgroup-grid">
+                <label class="subgroup-item">
+                  <input type="radio" name="prepSubgroup" value="Prep-2">
+                  <span>
+                    <b>Prep–2</b>
+                    Early years focus: counting, patterns, basic operations, and confidence with number.
+                  </span>
+                </label>
+
+                <label class="subgroup-item">
+                  <input type="radio" name="prepSubgroup" value="3-6">
+                  <span>
+                    <b>Years 3–6</b>
+                    Stronger fluency with fractions, decimals, word problems, and independent reasoning.
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hidden iframe submit -->
+          <iframe name="clubRegisterSubmitFrame" style="display:none;" title="Club register submission"></iframe>
+
+          <form id="mathsClubRegisterForm"
+                action="https://script.google.com/macros/s/AKfycbw3KTCtU35eY_r7F1tgkd16FlDM_C5ETnvgsLSaCNdybcuZvajIoy6lyuvznWu3VDg/exec"
+                method="post"
+                target="clubRegisterSubmitFrame"
+                novalidate>
+
+            <input type="hidden" name="formType" value="club-register">
+            <input type="hidden" name="clubStream" id="clubStreamField">
+            <input type="hidden" name="prepSubgroup" id="prepSubgroupField">
+            <input type="hidden" name="students" id="studentsField">
+
+            <div class="form-card">
+              <h2 class="section-title">Family and booking details</h2>
+              <p class="section-sub">
+                These details help us contact you, organise the booking, and confirm the best starting point.
+              </p>
+
+              <div class="two-col">
+                <div class="field-group">
+                  <label for="parentName">Parent / Guardian Name</label>
+                  <input type="text" id="parentName" name="parentName" required>
+                </div>
+
+                <div class="field-group">
+                  <label for="parentEmail">Parent / Guardian Email</label>
+                  <input type="email" id="parentEmail" name="parentEmail" required>
+                </div>
+
+                <div class="field-group">
+                  <label for="parentPhone">Parent / Guardian Phone</label>
+                  <input type="tel" id="parentPhone" name="parentPhone" required>
+                </div>
+
+                <div class="field-group">
+                  <label for="paymentPlan">Preferred Payment Plan</label>
+                  <select id="paymentPlan" name="paymentPlan">
+                    <option value="">Select option</option>
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>Yearly</option>
+                  </select>
+                </div>
+
+                <div class="field-group">
+                  <label for="startDate">Preferred Start Date</label>
+                  <input type="date" id="startDate" name="startDate">
+                </div>
+
+                <div class="field-group">
+                  <label for="competitionMode">Competition Preference (if applicable)</label>
+                  <select id="competitionMode" name="competitionMode">
+                    <option value="">Select option</option>
+                    <option>Online</option>
+                    <option>In-person (if available)</option>
+                    <option>No preference</option>
+                    <option>Not joining competitions yet</option>
+                  </select>
+                </div>
+
+                <div class="field-group" id="competitionLocationGroup" style="display:none;">
+                  <label for="competitionLocation">Preferred In-Person / Nearby Location</label>
+                  <input type="text" id="competitionLocation" name="competitionLocation" placeholder="Enter your suburb, area, or preferred nearby location">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <h2 class="section-title">Student register</h2>
+              <p class="section-sub">
+                Add every student joining this booking. If you are registering siblings, list each child on a separate row.
+              </p>
+
+              <p class="section-sub" style="margin-top:10px;">
+                <b>Registering more than one child?</b> Family discounts and sibling rewards may apply.
+              </p>
+
+              <div class="hero-actions" style="margin-top:10px;">
+                <a class="btn btn-secondary" href="{{ '/pricing.html#discounts-rewards' | relative_url }}">Family discounts &amp; rewards</a>
+              </div>
+
+              <div class="register-tools">
+                <div class="tool-left">
+                  <button type="button" class="btn btn-outline" onclick="addRow()">+ Add another student</button>
+                  <button type="button" class="btn btn-outline" onclick="resetTable()">Reset table</button>
+                </div>
+                <div class="tool-right">
+                  <a class="btn btn-secondary" href="{{ '/mathclub.html' | relative_url }}">View Maths Club info</a>
+                </div>
+              </div>
+
+              <div class="table-wrap">
+                <table id="studentTable" aria-label="Student register table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Student Name</th>
+                      <th>Preferred Name</th>
+                      <th>Grade</th>
+                      <th>School</th>
+                      <th>Maths Focus</th>
+                      <th>Learning Support / Notes</th>
+                      <th>Remove</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="row-number">1</td>
+                      <td><input type="text" name="studentName[]" required></td>
+                      <td><input type="text" name="preferredName[]"></td>
+                      <td>
+                        <select name="grade[]" required>
+                          <option value="">Select</option>
+                          <option>Prep</option>
+                          <option>Grade 1</option>
+                          <option>Grade 2</option>
+                          <option>Grade 3</option>
+                          <option>Grade 4</option>
+                          <option>Grade 5</option>
+                          <option>Grade 6</option>
+                          <option>Grade 7</option>
+                          <option>Grade 8</option>
+                          <option>Grade 9</option>
+                          <option>Grade 10</option>
+                          <option>Grade 11</option>
+                          <option>Grade 12</option>
+                        </select>
+                      </td>
+                      <td><input type="text" name="school[]" required></td>
+                      <td>
+                        <select name="mathsFocus[]">
+                          <option value="">Select</option>
+                          <option>Confidence building</option>
+                          <option>Core skills revision</option>
+                          <option>Problem solving</option>
+                          <option>Extension / challenge</option>
+                          <option>Exam preparation</option>
+                        </select>
+                      </td>
+                      <td><input type="text" name="studentNotes[]" placeholder="Optional"></td>
+                      <td><button type="button" class="remove-btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <h2 class="section-title">Final notes and consent</h2>
+              <p class="section-sub">
+                Share any timing preferences or extra details that would help us place your child well.
+              </p>
+
+              <div class="field-group" style="margin-top:14px;">
+                <label for="familyNotes">General Notes</label>
+                <textarea id="familyNotes" name="familyNotes" placeholder="Optional notes about timetable preferences, goals, sibling grouping, allergies, or anything else we should know"></textarea>
+              </div>
+
+              <div class="consent-box">
+                <label class="check-line">
+                  <input type="checkbox" id="consent" name="consent" required>
+                  <span>
+                    I confirm I am the parent/guardian (or authorised person) enrolling these student(s) and the information provided is correct.
+                  </span>
+                </label>
+
+                <p class="small-note">
+                  After you submit, we will review your registration and contact you with payment arrangements and next steps.
+                </p>
+
+                <div class="hero-actions">
+                  <button type="submit" class="btn btn-success">Submit registration</button>
+                  <a class="btn btn-outline" href="{{ '/pricing.html#maths-club-fees' | relative_url }}">View fees</a>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>What this page is best for</h3>
+              <ul class="clean-list">
+                <li>Family bookings with more than one child</li>
+                <li>Siblings joining the same club stream</li>
+                <li>Simple admin entry in one place</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Important placement note</h3>
+              <p class="section-sub">
+                One booking should include <b>one club stream</b>. If students belong in different streams, submit a separate form for each stream.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Not sure which club fits?</h3>
+              <p class="section-sub">
+                Use the enquiry page if you want help with tutoring (one-to-one, group tutoring, competitions).
+              </p>
+            </div>
+          </div>
+
+          <div class="success-card" id="successMessage">
+            <strong>Thank you. Your registration has been received.</strong>
+            We will contact you soon with payment arrangements and next steps for joining Maths Club.
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+    const tableBody = document.querySelector('#studentTable tbody');
+    const firstRowTemplate = tableBody.rows[0].cloneNode(true);
+
+    const clubOptions = document.querySelectorAll('.club-option');
+    const clubRadios = document.querySelectorAll('input[name="clubStream"]');
+    const prep6Radio = document.getElementById('club-prep6');
+
+    const prepSubgroupWrap = document.getElementById('prepSubgroupWrap');
+    const prepSubgroupRadios = document.querySelectorAll('input[name="prepSubgroup"]');
+
+    const form = document.getElementById('mathsClubRegisterForm');
+    const submitFrame = document.querySelector('iframe[name="clubRegisterSubmitFrame"]');
+    const successMessage = document.getElementById('successMessage');
+
+    const competitionMode = document.getElementById('competitionMode');
+    const competitionLocationGroup = document.getElementById('competitionLocationGroup');
+    const competitionLocation = document.getElementById('competitionLocation');
+
+    const clubStreamField = document.getElementById('clubStreamField');
+    const prepSubgroupField = document.getElementById('prepSubgroupField');
+    const studentsField = document.getElementById('studentsField');
+
+    // ✅ modal elements
+    const clubModal = document.getElementById('clubThankYouModal');
+    const clubOkBtn = document.getElementById('clubThankYouOkBtn');
+
+    clubOkBtn.addEventListener('click', () => {
+      clubModal.style.display = 'none';
+    });
+
+    let submissionPending = false;
+
+    function clearRowValues(row) {
+      row.querySelectorAll('input, select').forEach((field) => {
+        if (field.type === 'checkbox' || field.type === 'radio') field.checked = false;
+        else field.value = '';
+      });
+    }
+
+    function updateRowNumbers() {
+      document.querySelectorAll('#studentTable tbody tr').forEach((row, index) => {
+        row.querySelector('.row-number').textContent = index + 1;
+      });
+    }
+
+    function addRow() {
+      const newRow = firstRowTemplate.cloneNode(true);
+      clearRowValues(newRow);
+      tableBody.appendChild(newRow);
+      updateRowNumbers();
+    }
+
+    function removeRow(button) {
+      if (tableBody.rows.length === 1) {
+        alert('At least one student row must remain in the register.');
+        return;
+      }
+      button.closest('tr').remove();
+      updateRowNumbers();
+    }
+
+    function resetTable() {
+      while (tableBody.rows.length > 1) tableBody.deleteRow(1);
+      clearRowValues(tableBody.rows[0]);
+      updateRowNumbers();
+    }
+
+    function resetClubSelection() {
+      clubRadios.forEach(r => r.checked = false);
+      prepSubgroupRadios.forEach(r => { r.checked = false; r.required = false; });
+      clubOptions.forEach(card => card.classList.remove('active'));
+      prepSubgroupWrap.classList.remove('show');
+    }
+
+    function updateClubUI() {
+      clubOptions.forEach((card) => {
+        const radio = card.querySelector('input[type="radio"]');
+        card.classList.toggle('active', radio.checked);
+      });
+
+      if (prep6Radio.checked) {
+        prepSubgroupWrap.classList.add('show');
+        prepSubgroupRadios.forEach(r => r.required = true);
+      } else {
+        prepSubgroupWrap.classList.remove('show');
+        prepSubgroupRadios.forEach(r => { r.required = false; r.checked = false; });
+      }
+    }
+
+    function updateCompetitionLocation() {
+      const needsLocation = competitionMode && competitionMode.value === 'In-person (if available)';
+      if (!competitionLocationGroup || !competitionLocation) return;
+      competitionLocationGroup.style.display = needsLocation ? 'block' : 'none';
+      competitionLocation.required = !!needsLocation;
+      if (!needsLocation) competitionLocation.value = '';
+    }
+
+    function collectPayload() {
+      const selectedClub = document.querySelector('input[name="clubStream"]:checked');
+      const selectedPrepSubgroup = document.querySelector('input[name="prepSubgroup"]:checked');
+      const rows = Array.from(document.querySelectorAll('#studentTable tbody tr'));
+
+      const students = rows.map((row, index) => ({
+        rowNumber: index + 1,
+        studentName: row.querySelector('input[name="studentName[]"]').value.trim(),
+        preferredName: row.querySelector('input[name="preferredName[]"]').value.trim(),
+        grade: row.querySelector('select[name="grade[]"]').value,
+        school: row.querySelector('input[name="school[]"]').value.trim(),
+        mathsFocus: row.querySelector('select[name="mathsFocus[]"]').value,
+        studentNotes: row.querySelector('input[name="studentNotes[]"]').value.trim()
+      }));
+
+      return {
+        clubStream: selectedClub ? selectedClub.value : '',
+        prepSubgroup: selectedPrepSubgroup ? selectedPrepSubgroup.value : '',
+        students
+      };
+    }
+
+    clubRadios.forEach(r => r.addEventListener('change', updateClubUI));
+    if (competitionMode) competitionMode.addEventListener('change', updateCompetitionLocation);
+
+    if (submitFrame) {
+      submitFrame.addEventListener('load', () => {
+        if (!submissionPending) return;
+        submissionPending = false;
+
+        // show success card (optional)
+        successMessage.style.display = 'block';
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        // ✅ show nice modal (replaces browser alert)
+        clubModal.style.display = 'flex';
+
+        form.reset();
+        resetTable();
+        resetClubSelection();
+        updateCompetitionLocation();
+      });
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const clubChosen = document.querySelector('input[name="clubStream"]:checked');
+      const prepSubChosen = document.querySelector('input[name="prepSubgroup"]:checked');
+
+      if (!clubChosen) {
+        alert('Please choose one Maths Club stream before submitting.');
+        return;
+      }
+      if (prep6Radio.checked && !prepSubChosen) {
+        alert('Please choose either Prep–2 or Years 3–6 for Primary Maths Club.');
+        return;
+      }
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const payload = collectPayload();
+      clubStreamField.value = payload.clubStream;
+      prepSubgroupField.value = payload.prepSubgroup;
+      studentsField.value = JSON.stringify(payload.students);
+
+      submissionPending = true;
+      HTMLFormElement.prototype.submit.call(form);
+    });
+
+    updateClubUI();
+    updateCompetitionLocation();
+</script>

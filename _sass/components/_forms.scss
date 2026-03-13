@@ -1,0 +1,48 @@
+// _sass/components/_forms.scss
+// Base form input styles shared across enquiry, register, club-register
+
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-weight: 800;
+    font-size: 15px;
+    color: $ink;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid rgba(15,23,42,.18);
+    border-radius: 12px;
+    font-size: 16px;
+    background: rgba(255,255,255,.92);
+    color: $ink;
+    transition: border-color .12s ease, box-shadow .12s ease;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: $brand;
+      box-shadow: 0 0 0 3px rgba(11,94,215,.14);
+    }
+  }
+
+  textarea { min-height: 120px; resize: vertical; }
+}
+
+.form-hint {
+  font-size: 13px;
+  color: $muted;
+  font-weight: 650;
+  margin-top: 2px;
+}

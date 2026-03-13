@@ -1,0 +1,83 @@
+// _sass/base/_variables.scss
+// ══════════════════════════════════════════════════════════════════
+//  All design tokens for Magic Math Master.
+//  Edit this file to restyle the entire site.
+// ══════════════════════════════════════════════════════════════════
+
+// ── Colour palette ────────────────────────────────────────────────
+$bg:        #f7f9fc;
+$paper:     #ffffff;
+$ink:       #0f172a;
+$muted:     #475569;
+$line:      rgba(15, 23, 42, .10);
+
+$brand:         #0b5ed7;
+$brand2:        #0a3d91;
+$accent:        #f59e0b;
+$success:       #16a34a;
+$red:           #ba0921;
+$turquoise:     #05464d;
+
+$success-hover: #15803d;
+$accent-hover:  #d97706;
+$brand-hover:   #0a4fb8;
+
+// ── Spacing & shape ───────────────────────────────────────────────
+$radius:  16px;
+$max:     1120px;
+
+// ── Shadows ───────────────────────────────────────────────────────
+$shadow:  0 18px 40px rgba(2, 6, 23, .10);
+$shadow2: 0 10px 24px rgba(2, 6, 23, .08);
+
+// ── Nav sizing ────────────────────────────────────────────────────
+$nav-font: 16px;
+$nav-py:   6px;
+$nav-px:   12px;
+
+// ── Hero title fluid sizing ───────────────────────────────────────
+$hero-title-min:  30px;
+$hero-title-fluid: 3.2vw;
+$hero-title-max:  56px;
+
+// ── Breakpoints ───────────────────────────────────────────────────
+$bp-xl:   1100px;
+$bp-lg:   1024px;
+$bp-md:   980px;
+$bp-sm:   760px;
+$bp-xs:   520px;
+
+// ── CSS custom properties (used at runtime for JS/calc) ───────────
+// Emitted into :root so JS and inline styles can reference them.
+:root {
+  --bg:        #{$bg};
+  --paper:     #{$paper};
+  --ink:       #{$ink};
+  --muted:     #{$muted};
+  --line:      #{$line};
+
+  --brand:     #{$brand};
+  --brand2:    #{$brand2};
+  --accent:    #{$accent};
+  --success:   #{$success};
+  --red:       #{$red};
+  --turquoise: #{$turquoise};
+
+  --success-hover: #{$success-hover};
+  --accent-hover:  #{$accent-hover};
+  --brand-hover:   #{$brand-hover};
+
+  --radius:  #{$radius};
+  --shadow:  #{$shadow};
+  --shadow2: #{$shadow2};
+  --max:     #{$max};
+
+  --nav-font: #{$nav-font};
+  --nav-py:   #{$nav-py};
+  --nav-px:   #{$nav-px};
+
+  --hero-title-min:   #{$hero-title-min};
+  --hero-title-fluid: #{$hero-title-fluid};
+  --hero-title-max:   #{$hero-title-max};
+  --hero-title-line:  1.08;
+}

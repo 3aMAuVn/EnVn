@@ -1,0 +1,38 @@
+// _sass/components/_accordion.scss
+
+details.acc {
+  background: rgba(255,255,255,.82);
+  border: 1px solid $line;
+  border-radius: $radius;
+  box-shadow: $shadow2;
+  margin: 0 0 12px;
+  overflow: hidden;
+  scroll-margin-top: 180px;
+}
+
+summary.acc-sum {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 1000;
+  color: $brand2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  user-select: none;
+
+  &::-webkit-details-marker { display: none; }
+}
+
+.caret {
+  font-weight: 1000;
+  opacity: .85;
+  transition: transform .12s ease;
+
+  details[open] & { transform: rotate(180deg); }
+}
+
+.acc-body {
+  padding: 0 16px 16px;
+}

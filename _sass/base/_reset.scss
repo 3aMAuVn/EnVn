@@ -1,0 +1,44 @@
+// _sass/base/_reset.scss
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a { color: inherit; }
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+               "Apple Color Emoji", "Segoe UI Emoji";
+  background:
+    radial-gradient(1200px 700px at 15% 0%,  rgba(11,94,215,.12),   transparent 55%),
+    radial-gradient(1000px 700px at 85% 10%, rgba(245,158,11,.10),  transparent 60%),
+    $bg;
+  color: $ink;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: $max;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+// Section separator
+.sep {
+  height: 1px;
+  background: $line;
+  margin: 8px 0;
+}
+
+.section { padding: 0 0 32px; }

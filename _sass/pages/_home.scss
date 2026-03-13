@@ -1,0 +1,18 @@
+// _sass/pages/_home.scss
+// Styles specific to index.html that aren't in shared components.
+
+.h2-center {
+  margin: 14px 0 8px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 1000;
+  letter-spacing: -0.3px;
+  color: $brand2;
+}
+
+.sub-center {
+  margin: 0 0 14px;
+  text-align: center;
+  color: $muted;
+  font-weight: 650;
+}

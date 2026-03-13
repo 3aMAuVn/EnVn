@@ -1,0 +1,58 @@
+// _sass/base/_utilities.scss
+// Global overflow & layout safety helpers — loaded last so they win.
+
+// 1. Prevent horizontal overflow
+html, body { overflow-x: hidden; }
+
+// 2. Allow grid/flex children to shrink
+.grid > *,
+.form > *,
+.footer-inner > *,
+.hero-actions > *,
+.nav > * {
+  min-width: 0;
+}
+
+// 3. Long text must wrap
+.section-sub,
+.card,
+.card p,
+.card h3,
+.hero-desc,
+.hero-title {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+// 4. Buttons wrap on very small screens
+@media (max-width: $bp-xs) {
+  .btn {
+    white-space: normal;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions,
+  .hero-snap-cta,
+  .footer-inner,
+  .quick-jump {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
+
+// 5. Table safety
+.table-wrap,
+.table-responsive {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table { max-width: 100%; }
+
+// Text helpers
+.text-center { text-align: center; }
+.text-muted   { color: $muted; }
+.fw-bold      { font-weight: 1000; }

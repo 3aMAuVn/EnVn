@@ -1,0 +1,37 @@
+// _sass/components/_modal.scss
+// Thank-you modal (used on club-register.html)
+
+#clubThankYouModal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.45);
+  z-index: 9999;
+  padding: 18px;
+
+  .modal-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 22px;
+    width: min(440px, 100%);
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(0,0,0,.22);
+    border: 1px solid rgba(0,0,0,.08);
+  }
+
+  .modal-title {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 1000;
+    color: $accent;
+  }
+
+  .modal-text {
+    margin: 0 0 14px;
+    color: $muted;
+    font-weight: 650;
+    line-height: 1.6;
+  }
+}

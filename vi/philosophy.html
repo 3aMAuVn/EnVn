@@ -1,0 +1,299 @@
+---
+layout: default
+lang: vi
+title: "Triết lý giảng dạy | Magic Math Master"
+page_styles: |
+  /* Sections */
+      .philo-list{
+        margin: 0;
+        padding-left: 20px;
+        line-height: 1.85;
+        font-weight: 650;
+      }
+      .philo-list li{ margin: 8px 0; }
+  
+      /* Teaching grid (uses your style.css grid/card vibe) */
+      .teach-grid{
+        display:grid;
+        gap: 16px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 10px;
+      }
+      @media (max-width: 1050px){
+        .teach-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 700px){
+        .teach-grid{ grid-template-columns: 1fr; }
+      }
+  
+      /* Small note card */
+      .note{
+        background: rgba(255,255,255,.72);
+        border: 2px solid rgba(0,0,0,.10);
+        border-radius: 18px;
+        padding: 14px 16px;
+        font-weight: 750;
+        line-height: 1.7;
+      }
+  
+      /* ===== Quick links: “Programs-like” behaviour ===== */
+      .ql-btn.is-active{
+        background: rgba(11,94,215,.18);
+        border-color: rgba(11,94,215,.35);
+        box-shadow: 0 10px 18px rgba(11,94,215,.12);
+        color: var(--brand2);
+      }
+  
+      @keyframes mmmFlash {
+        0%   { box-shadow: 0 0 0 rgba(11,94,215,0); border-color: rgba(11,94,215,.12); }
+        35%  { box-shadow: 0 0 0 6px rgba(11,94,215,.18); border-color: rgba(11,94,215,.55); }
+        100% { box-shadow: 0 0 0 rgba(11,94,215,0); border-color: rgba(11,94,215,.12); }
+      }
+      .anchor-flash.card{ animation: mmmFlash 1.15s ease; }
+  
+      /* Anchor jump offset (topbar height) */
+      .anchor-target{ scroll-margin-top: 110px; }
+---
+
+<!--<a class="brand" href="{{ '/index.html' | relative_url }}" aria-label="Trang chủ Magic Math Master">
+        <img class="brand-logo" src="{{ site.baseurl }}/assets/logo.png" alt="Logo Magic Math Master" />
+        <div class="brand-title">
+          <b>Magic Math Master</b>
+        </div>
+      </a>-->
+
+      <nav class="nav" aria-label="Điều hướng chính">
+        <a data-nav href="{{ '/index.html' | relative_url }}">Trang chủ</a>
+        <a data-nav href="{{ '/programs.html' | relative_url }}">Chương trình</a>
+        <a data-nav href="{{ '/pricing.html' | relative_url }}">Học phí</a>
+        <a data-nav href="{{ '/policies.html' | relative_url }}">Chính sách</a>
+        <a data-nav href="{{ '/about.html' | relative_url }}">Giới thiệu</a>
+        <a data-nav href="{{ '/philosophy.html' | relative_url }}">Triết lý</a>
+        <a data-nav href="{{ '/contact.html' | relative_url }}">Liên hệ</a>
+        <!--<a class="nav-lang" href="{{ '/philosophy.html' | relative_url }}">English</a>-->
+        <a href="https://practice.magicmathmaster.com.au">Đăng nhập</a>
+        <a class="nav-lang" href="{{ '/philosophy.html' | relative_url }}">
+          <svg class="nav-lang-flag" viewBox="0 0 24 24" aria-hidden="true">
+            <defs>
+              <clipPath id="nav-clip-au">
+                <circle cx="12" cy="12" r="12"></circle>
+              </clipPath>
+            </defs>
+            <g clip-path="url(#nav-clip-au)">
+              <rect width="24" height="24" fill="#012169"></rect>
+
+              <g transform="scale(0.5)">
+                <rect width="24" height="16" fill="#012169"></rect>
+                <path d="M0,0 L24,16 M24,0 L0,16" stroke="#fff" stroke-width="4"></path>
+                <path d="M0,0 L24,16 M24,0 L0,16" stroke="#c8102e" stroke-width="2"></path>
+                <path d="M12,0 V16 M0,8 H24" stroke="#fff" stroke-width="6"></path>
+                <path d="M12,0 V16 M0,8 H24" stroke="#c8102e" stroke-width="3"></path>
+              </g>
+
+              <circle cx="17.5" cy="7" r="1.4" fill="#fff"></circle>
+              <circle cx="18.8" cy="11.5" r="1" fill="#fff"></circle>
+              <circle cx="15.2" cy="12.8" r="1.1" fill="#fff"></circle>
+              <circle cx="18.2" cy="16.5" r="1.1" fill="#fff"></circle>
+              <circle cx="14.7" cy="18.2" r="0.9" fill="#fff"></circle>
+              <circle cx="8.3" cy="16.2" r="1.8" fill="#fff"></circle>
+            </g>
+          </svg>
+          <span>EN</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===== HERO (Programs-like: left text + right logo) ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-snap">
+
+        <div class="hero-snap-grid">
+          <div>
+            <h1 class="hero-snap-title">Triết lý</h1>
+            <div class="hero-snap-tagline">Toán cho cuộc sống — tư duy tự tin, không chỉ để làm bài kiểm tra</div>
+          </div>
+
+          <div class="hero-snap-logoBox" aria-hidden="true">
+            <img src="{{ site.baseurl }}/assets/logo.png" alt="Logo Magic Math Master" loading="lazy" />
+          </div>
+        </div>
+
+        <p class="hero-snap-desc">
+          Tại <strong>Magic Math Master</strong>, chúng tôi tin rằng mọi học sinh đều có thể tiến bộ trong Toán học nếu có sự hỗ trợ,
+          thử thách phù hợp và sự khích lệ đúng cách. Chúng tôi xây dựng nền tảng vững, sự tự tin, và khả năng tư duy rõ ràng, độc lập.
+        </p>
+
+        <div class="hero-snap-checks">
+          <span>✓ Dạy nhẹ nhàng, có cấu trúc</span>
+          <span>✓ Học tập cá nhân hoá</span>
+          <span>✓ Trao đổi rõ ràng với gia đình</span>
+        </div>
+
+        <div class="hero-snap-pills">
+          <span class="hero-snap-pill">Nền tảng trước</span>
+          <span class="hero-snap-pill">Tự tin &amp; tư duy phát triển</span>
+          <span class="hero-snap-pill">Giải quyết vấn đề thật</span>
+          <span class="hero-snap-pill">Mẫu giáo - Lớp 12</span>
+        </div>
+
+        <div class="hero-snap-cta">
+          <a class="btn btn-success" href="{{ '/enquiry.html' | relative_url }}">Gửi yêu cầu</a>
+          <a class="btn btn-amber" href="{{ '/register.html' | relative_url }}">Đăng ký</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ QUICK LINKS (Programs-like: ql-btn + JS opens/jumps) -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="quicklinks">
+        <!-- <h2>Liên kết nhanh (chạm để đi tới)</h2>-->
+        <div class="ql-grid">
+          <a class="ql-btn" href="#our-philosophy" data-jump="our-philosophy">Đọc triết lý của chúng tôi</a>
+          <a class="ql-btn" href="#how-we-teach" data-jump="how-we-teach">Cách chúng tôi dạy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main class="container">
+
+    <!-- OUR PHILOSOPHY -->
+    <section id="our-philosophy" class="section anchor-target">
+      <h2 class="section-title">Triết lý của chúng tôi</h2>
+      <p class="section-sub">
+        Chúng tôi dạy Toán theo cách giúp học sinh <strong>hiểu</strong>, <strong>vận dụng</strong> và <strong>yêu thích</strong> Toán.
+        Mục tiêu không phải “chữa cháy” nhanh — mà là tiến bộ ổn định và bền vững.
+      </p>
+
+      <div class="card">
+        <ul class="philo-list">
+          <li><strong>Toán cho cuộc sống, không chỉ cho bài kiểm tra</strong> — bài kiểm tra là cột mốc, còn hiểu sâu mới là đích đến.</li>
+          <li><strong>Bối cảnh có ý nghĩa</strong> — chúng tôi kết nối Toán với đời sống: tiền bạc, trò chơi, thể thao, khoa học và các quyết định hằng ngày.</li>
+          <li><strong>Nền tảng vững trước</strong> — lấp lỗ hổng và xây độ chính xác trước khi tăng tốc.</li>
+          <li><strong>Tự tin và tư duy phát triển</strong> — sai là dữ liệu, không phải thất bại; học sinh học cách kiên trì và cải thiện.</li>
+          <li><strong>Tư duy logic và giải quyết vấn đề thật</strong> — học sinh học chiến lược, không chỉ chép lại các bước.</li>
+          <li><strong>Kỹ năng giao tiếp và trình bày</strong> — diễn giải rõ ràng là một phần của việc học Toán (và giúp học tốt ở trường).</li>
+          <li><strong>Chuẩn bị cho học tập và nghề nghiệp tương lai</strong> — Toán hỗ trợ STEM, kinh doanh, thiết kế, dữ liệu và lựa chọn cuộc sống.</li>
+          <li><strong>Phù hợp với từng học sinh</strong> — tốc độ học, cách giải thích và luyện tập được điều chỉnh theo người học.</li>
+          <li><strong>Một hành trình, không chỉ là một buổi học</strong> — chúng tôi xây thói quen và sự tự tin theo thời gian, kèm phản hồi rõ ràng cho gia đình.</li>
+        </ul>
+      </div>
+
+      <div class="note" style="margin-top:14px;">
+        👨‍👩‍👧‍👦 <strong>Phụ huynh sẽ nhận được:</strong> mục tiêu học rõ ràng, nhịp học nhất quán, và cập nhật định kỳ về tiến bộ &amp; bước tiếp theo.
+      </div>
+    </section>
+
+    <!-- HOW WE TEACH -->
+    <section id="how-we-teach" class="section anchor-target">
+      <h2 class="section-title">Cách chúng tôi dạy</h2>
+      <p class="section-sub">
+        Buổi học của chúng tôi có nhịp rõ ràng: chẩn đoán → xây nền tảng → luyện tập kèm phản hồi → nâng cao khi sẵn sàng.
+        Học sinh học “làm gì”, “vì sao đúng”, và “cách trình bày tư duy”.
+      </p>
+
+      <div class="teach-grid">
+        <div class="card">
+          <h3 style="margin-top:0;">Toán cho cuộc sống</h3>
+          <p class="section-sub" style="margin:0;">
+            Chúng tôi dạy Toán như một công cụ thực tế để suy luận, ra quyết định, hiểu dữ liệu và mở ra cơ hội trong tương lai.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;">Nền tảng vững trước</h3>
+          <p class="section-sub" style="margin:0;">
+            Chúng tôi đảm bảo học sinh thật sự hiểu khái niệm cốt lõi trước khi đi tiếp. Khi nền tảng vững, tự tin và tốc độ sẽ tăng tự nhiên.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;">Tự tin &amp; tư duy phát triển</h3>
+          <p class="section-sub" style="margin:0;">
+            Sai là một phần của học tập. Chúng tôi dẫn dắt học sinh từ “con không làm được” đến “con có thể cải thiện” và rồi “con làm được rồi”.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;">Học cách tư duy</h3>
+          <p class="section-sub" style="margin:0;">
+            Không chỉ công thức: học sinh học chiến lược làm bài toán có lời văn, câu hỏi lạ và cách kiểm tra lại để giảm lỗi bất cẩn.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;">Phù hợp với từng học sinh</h3>
+          <p class="section-sub" style="margin:0;">
+            Mỗi em học theo một cách khác nhau. Chúng tôi điều chỉnh nhịp, cách giải thích và luyện tập để học sinh biết rõ bước tiếp theo cần làm.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;">Hành trình dài hạn</h3>
+          <p class="section-sub" style="margin:0;">
+            Chúng tôi xây kỹ năng và thói quen lâu dài, kèm trao đổi rõ ràng với gia đình về tiến bộ và bước tiếp theo.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:22px; margin-top:18px;">
+        <h3 style="margin:0 0 10px;">Sẵn sàng bắt đầu?</h3>
+        <p class="section-sub" style="margin:0 0 14px;">
+          Hãy cho chúng tôi biết khối lớp và mục tiêu của con bạn — chúng tôi sẽ gợi ý lộ trình phù hợp nhất.
+        </p>
+        <a class="btn btn-success" href="{{ '/enquiry.html' | relative_url }}">Gửi yêu cầu</a>
+        <a class="btn btn-amber" href="{{ '/register.html' | relative_url }}" style="margin-left:10px;">Đăng ký</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (same template) ===== -->
+
+<script>
+(function(){
+      var btns = Array.prototype.slice.call(document.querySelectorAll(".ql-btn[data-jump]"));
+
+      function setActive(id){
+        btns.forEach(function(b){ b.classList.remove("is-active"); });
+        var match = btns.find(function(b){ return b.getAttribute("data-jump") === id; });
+        if(match) match.classList.add("is-active");
+      }
+
+      function flashCard(section){
+        if(!section) return;
+        var card = section.querySelector(".card");
+        if(!card) return;
+        card.classList.remove("anchor-flash");
+        void card.offsetWidth;
+        card.classList.add("anchor-flash");
+        setTimeout(function(){ card.classList.remove("anchor-flash"); }, 1300);
+      }
+
+      function go(id){
+        var el = document.getElementById(id);
+        if(!el) return;
+        history.replaceState(null, "", "#" + id);
+        setActive(id);
+        el.scrollIntoView({ behavior:"smooth", block:"start" });
+        setTimeout(function(){ flashCard(el); }, 220);
+      }
+
+      btns.forEach(function(btn){
+        btn.addEventListener("click", function(e){
+          e.preventDefault();
+          go(btn.getAttribute("data-jump"));
+        });
+      });
+
+      // If someone lands with a hash, highlight the matching quick link
+      var initial = (location.hash || "").replace("#","");
+      if(initial) setActive(initial);
+    })();
+</script>

@@ -1,0 +1,38 @@
+title: "Magic Math Master"
+description: "Calm, structured maths tutoring for Prep to Year 12 in Australia."
+url: "https://www.magicmathmaster.com.au"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+# Collections (optional – for future blog/resources)
+# collections:
+#   posts:
+#     output: true
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "vi"
+    values:
+      layout: "default"
+      lang: "vi"

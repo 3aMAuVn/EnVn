@@ -1,0 +1,641 @@
+---
+layout: default
+title: "Register | Magic Math Master"
+description: "Register for Magic Math Master tutoring programs."
+page_styles: |
+  :root {
+        --bg: #efe7e3;
+        --card: rgba(255,255,255,.94);
+        --ink: #172033;
+        --muted: #5f6b7a;
+        --brand: #f28c28;
+        --brand-dark: #a84300;
+        --line: #e8d9cf;
+        --accent: #0b5ed7;
+        --accent-soft: rgba(11,94,215,.08);
+        --hero: #08153e;
+        --green: #138a48;
+        --amber: #cc7a00;
+        --red: #cf3d32;
+        --radius: 18px;
+        --shadow: 0 14px 34px rgba(2, 6, 23, .10);
+        --shadow-soft: 0 8px 22px rgba(84, 37, 0, .06);
+      }
+  
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+  
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #f5efec 0%, var(--bg) 100%);
+        color: var(--ink);
+        line-height: 1.55;
+      }
+  
+      a { color: var(--accent); }
+  
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(255,255,255,.84);
+        border-bottom: 1px solid rgba(232, 217, 207, .9);
+      }
+  
+      .container {
+        width: min(1040px, calc(100% - 28px));
+        margin: 0 auto;
+      }
+  
+      .topbar-inner {
+        min-height: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+  
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: var(--ink);
+        font-weight: 1000;
+        letter-spacing: -.2px;
+      }
+  
+      .top-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+  
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 46px;
+        padding: 0 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 900;
+        border: 0;
+        cursor: pointer;
+        transition: transform .12s ease, filter .12s ease;
+        box-shadow: 0 10px 20px rgba(2, 6, 23, .10);
+        font: inherit;
+      }
+  
+      .btn:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.03);
+      }
+  
+      .btn-success { background: linear-gradient(135deg, #1f9d58, var(--green)); color: #fff; }
+      .btn-amber { background: linear-gradient(135deg, #f4a528, var(--amber)); color: #fff; }
+      .btn-outline {
+        background: rgba(255,255,255,.88);
+        color: var(--accent);
+        border: 1px solid rgba(11,94,215,.18);
+        box-shadow: none;
+      }
+  
+      main { padding: 18px 0 40px; }
+  
+      .hero-card {
+        overflow: hidden;
+        border-radius: calc(var(--radius) + 4px);
+        box-shadow: 0 18px 36px rgba(2, 6, 23, .14);
+        border: 1px solid rgba(255,255,255,.14);
+        background: rgba(255,255,255,.08);
+        margin-bottom: 16px;
+      }
+  
+      .hero-banner {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: var(--hero);
+      }
+  
+      .hero-copy {
+        background: rgba(255,255,255,.95);
+        border-top: 1px solid var(--line);
+        padding: 18px;
+      }
+  
+      .hero-title {
+        margin: 0 0 8px;
+        font-size: clamp(1.7rem, 4vw, 2.5rem);
+        line-height: 1.15;
+        color: var(--brand-dark);
+        font-weight: 1000;
+        letter-spacing: -.3px;
+      }
+  
+      .hero-desc {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.7;
+      }
+  
+      .hero-pills {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+  
+      .hero-pill {
+        padding: 9px 14px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 900;
+        border: 1px solid rgba(11,94,215,.14);
+        font-size: .95rem;
+      }
+  
+      .page-card,
+      .form-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-soft);
+      }
+  
+      .page-card { padding: 22px; margin-bottom: 16px; }
+  
+      .page-title {
+        margin: 0 0 12px;
+        font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+        font-weight: 1000;
+        line-height: 1.15;
+        color: var(--ink);
+        padding-bottom: 12px;
+        border-bottom: 3px solid rgba(168,67,0,.85);
+      }
+  
+      .lead { margin: 0 0 12px; font-size: 1.02rem; color: var(--ink); }
+      .lead strong { font-weight: 1000; }
+  
+      .contact-list {
+        display: grid;
+        gap: 8px;
+        margin: 10px 0 14px;
+      }
+      .contact-list a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 800;
+      }
+      .contact-list a:hover { text-decoration: underline; }
+  
+      form { display: grid; gap: 16px; }
+      .form-card { padding: 20px; }
+  
+      .section-title {
+        margin: 0 0 14px;
+        color: var(--brand-dark);
+        font-size: 1.12rem;
+        font-weight: 1000;
+        letter-spacing: -.15px;
+      }
+  
+      .field-block + .field-block { margin-top: 18px; }
+  
+      label, legend {
+        display: block;
+        font-weight: 900;
+        margin-bottom: 10px;
+        font-size: 1.03rem;
+        color: var(--ink);
+      }
+  
+      .required::after { content: " *"; color: #d93025; font-weight: 1000; }
+  
+      /* =========================================================
+         ✅ UPDATED INPUTS: match club-register.html (boxed + padded)
+         ========================================================= */
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px 12px;            /* ✅ space on left */
+        border: 1px solid var(--line); /* ✅ full border */
+        border-radius: 14px;           /* ✅ rounded */
+        background: rgba(255,255,255,.92);
+        color: var(--ink);
+        font: inherit;
+        outline: none;
+      }
+  
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="tel"]:focus,
+      select:focus,
+      textarea:focus {
+        border-color: rgba(11,94,215,.45);
+        box-shadow: 0 0 0 4px rgba(11,94,215,.10);
+      }
+  
+      textarea { min-height: 118px; resize: vertical; }
+  
+      /* Placeholder readability */
+      ::placeholder{
+        color: rgba(95,107,122,.78);
+        font-weight: 650;
+      }
+  
+      /* Keep select arrow clean */
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image:
+          linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+          linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+        background-position:
+          calc(100% - 18px) 50%,
+          calc(100% - 12px) 50%;
+        background-size: 6px 6px, 6px 6px;
+        background-repeat: no-repeat;
+        padding-right: 40px;
+        cursor: pointer;
+      }
+  
+      .helper, .note, .small {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: .96rem;
+        font-weight: 650;
+        line-height: 1.6;
+      }
+  
+      fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+  
+      .option-list { display: grid; gap: 12px; margin-top: 12px; }
+  
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 34px;
+        font-weight: 650;
+        color: var(--ink);
+      }
+  
+      .option input {
+        width: 22px;
+        height: 22px;
+        margin: 0;
+        flex: 0 0 auto;
+        accent-color: var(--accent);
+      }
+  
+      .inline-other { margin-top: 10px; display: none; }
+      .inline-other.show { display: block; }
+  
+      .privacy {
+        background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(251,251,253,.96));
+      }
+  
+      .submit-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-top: 20px;
+      }
+  
+      .submit-row .btn { min-width: 150px; }
+  
+      .error { color: #b91c1c; font-weight: 800; margin-top: 8px; display: none; }
+      .error.show { display: block; }
+  
+      .footer {
+        padding: 22px 0 34px;
+        color: var(--muted);
+        font-weight: 700;
+        text-align: center;
+        font-size: .95rem;
+      }
+  
+      /* Simple thank-you modal */
+      #thankYouModal{
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,.45);
+        z-index: 9999;
+        padding: 18px;
+      }
+      #thankYouModal .modal-card{
+        background: #fff;
+        border-radius: 18px;
+        padding: 22px;
+        width: min(420px, 100%);
+        text-align: center;
+        box-shadow: 0 18px 40px rgba(0,0,0,.22);
+      }
+  
+      @media (max-width: 820px) {
+        .container { width: min(100%, calc(100% - 18px)); }
+        .topbar-inner { padding: 8px 0; align-items: flex-start; flex-direction: column; }
+        .top-actions { width: 100%; }
+        .top-actions .btn { flex: 1 1 auto; }
+        .page-card, .form-card, .hero-copy { padding: 16px; }
+      }
+  
+      @media (max-width: 560px) {
+        .hero-banner {
+          max-height: 185px;
+          object-fit: cover;
+          object-position: center;
+        }
+        .submit-row .btn { width: 100%; }
+      }
+---
+
+<main>
+    <div class="container">
+      <section class="hero-card" aria-label="Magic Math Master banner hero">
+        <img class="hero-banner" src="{{ '/assets/banner.png" alt="Magic Math Master banner" loading="eager" />
+        <div class="hero-copy">
+          <h1 class="hero-title">Register for Tutoring at Magic Math Master</h1>
+          <p class="hero-desc">
+            Please complete this registration form and we will contact you shortly to confirm the best next step for your child.
+          </p>
+          <div class="hero-pills">
+            <span class="hero-pill">Prep to Year 12</span>
+            <span class="hero-pill">Online &amp; in-person</span>
+            <span class="hero-pill">Confidence-first teaching</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-card">
+        <h2 class="page-title">🧮 Register for Tutoring at Magic Math Master</h2>
+        <p class="lead"><strong>Official registration form for Magic Math Master (Dr. Tuyet Vu).</strong></p>
+        <p class="lead">We collect the information in this form only to contact you about tutoring, enrolment, and appropriate class placement.</p>
+        <p class="lead">Questions?</p>
+        <div class="contact-list">
+          <a href="tel:+61402204599">📞 +61 402 204 599</a>
+          <a href="https://wa.me/61402204599" target="_blank" rel="noopener">🟢 WhatsApp</a>
+          <a href="mailto:magicmathmasters@gmail.com?subject=Magic%20Math%20Master%20Registration">✉️ magicmathmasters@gmail.com</a>
+        </div>
+        <p class="lead">Please complete this form if you would like to register for Magic Math Master programs. We will contact you shortly to confirm the best next step for your child.</p>
+      </section>
+
+      <!-- Hidden iframe for cross-origin submission (no CORS issues) -->
+      <iframe name="registerSubmitFrame" style="display:none;" title="Register submission"></iframe>
+
+      <form id="registerForm"
+            action="https://script.google.com/macros/s/AKfycbw3KTCtU35eY_r7F1tgkd16FlDM_C5ETnvgsLSaCNdybcuZvajIoy6lyuvznWu3VDg/exec"
+            method="post"
+            target="registerSubmitFrame"
+            novalidate>
+        <input type="hidden" name="language" value="English">
+
+        <section class="form-card">
+          <h3 class="section-title">Parent / contact details</h3>
+
+          <div class="field-block">
+            <label class="required" for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="Valid email address" required />
+            <p class="note">We will only use your email address to respond to this registration.</p>
+          </div>
+
+          <div class="field-block">
+            <label class="required" for="parentName">🧑‍🤝‍🧑 Parent/Guardian Full Name</label>
+            <input id="parentName" name="parent_name" type="text" placeholder="Short-answer text" required />
+          </div>
+
+          <div class="field-block">
+            <label class="required" for="mobileNumber">📱 Mobile Number</label>
+            <input id="mobileNumber" name="mobile_number" type="tel" autocomplete="tel" placeholder="Short-answer text" required />
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3 class="section-title">Contact preference</h3>
+
+          <div class="field-block">
+            <label class="required" for="contactMethod">☎️ Preferred Contact Method</label>
+            <select id="contactMethod" name="contact_method" required data-target="contactOther" data-other-value="Other">
+              <option value="" selected disabled>Select one option</option>
+              <option value="Email">Email</option>
+              <option value="Phone">Phone</option>
+              <option value="Text">Text</option>
+              <option value="WhatsApp (if used)">WhatsApp (if used)</option>
+              <option value="Other">Other</option>
+            </select>
+            <div id="contactOther" class="inline-other">
+              <input type="text" name="contact_method_other" placeholder="Please specify" />
+            </div>
+          </div>
+
+          <div class="field-block">
+            <label for="studentName">🧒🧒 Student Full Name</label>
+            <input id="studentName" name="student_name" type="text" placeholder="Short-answer text" />
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3 class="section-title">Student information</h3>
+
+          <div class="field-block">
+            <label class="required" for="yearLevel">🎓 Year level (current)</label>
+            <select id="yearLevel" name="year_level" required data-target="yearOther" data-other-value="Other">
+              <option value="" selected disabled>Select current year level</option>
+              <option value="Prep or Foundation">Prep or Foundation</option>
+              <option value="Grade 1">Grade 1</option>
+              <option value="Grade 2">Grade 2</option>
+              <option value="Grade 3">Grade 3</option>
+              <option value="Grade 4">Grade 4</option>
+              <option value="Grade 5">Grade 5</option>
+              <option value="Grade 6">Grade 6</option>
+              <option value="Grade 7">Grade 7</option>
+              <option value="Grade 8">Grade 8</option>
+              <option value="Grade 9">Grade 9</option>
+              <option value="Grade 10">Grade 10</option>
+              <option value="Grade 11">Grade 11</option>
+              <option value="Grade 12">Grade 12</option>
+              <option value="Other">Other (please specify)</option>
+            </select>
+            <div id="yearOther" class="inline-other">
+              <input type="text" name="year_level_other" placeholder="Please specify current year level" />
+            </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3 class="section-title">Program selection</h3>
+
+          <fieldset class="field-block">
+            <legend class="required">📘 What would you like to register for?</legend>
+            <div class="option-list">
+              <label class="option"><input type="checkbox" name="register_for" value="One-to-one" /> One-to-one</label>
+              <label class="option"><input type="checkbox" name="register_for" value="Group lessons" /> Group lessons</label>
+              <label class="option"><input type="checkbox" name="register_for" value="Maths competition training" /> Maths competition training</label>
+            </div>
+            <p id="registerError" class="error">Please select at least one program.</p>
+          </fieldset>
+
+          <div class="field-block">
+            <label class="required" for="lessonType">🏫 Lesson type</label>
+            <select id="lessonType" name="lesson_type" required data-target="lessonOther" data-other-value="Other">
+              <option value="" selected disabled>Select lesson type</option>
+              <option value="Online one-to-one">Online one-to-one</option>
+              <option value="Face-to-face one-to-one (Coburg/ nearby)">Face-to-face one-to-one (Coburg/ nearby)</option>
+              <option value="Face-to-face group (Coburg area/nearby)">Face-to-face group (Coburg area/nearby)</option>
+              <option value="Group (online)">Group (online)</option>
+              <option value="School group program (at student’s school)">School group program (at student’s school)</option>
+              <option value="Either is fine">Either is fine</option>
+              <option value="Not sure yet">Not sure yet</option>
+              <option value="Other">Other</option>
+            </select>
+            <div id="lessonOther" class="inline-other">
+              <input type="text" name="lesson_type_other" placeholder="Please specify" />
+            </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3 class="section-title">Learning goals</h3>
+
+          <div class="field-block">
+            <label class="required" for="helpAreas">✏️ What areas does your child need help with?</label>
+            <p class="helper"><strong>Example:</strong> Fractions, word problems, building confidence, exam preparation, problem solving.</p>
+            <textarea id="helpAreas" name="help_areas" placeholder="Long-answer text" required></textarea>
+          </div>
+
+          <div class="field-block">
+            <label for="questions">❓ Do you have any questions for Magic Math Master?</label>
+            <p class="helper"><strong>Example:</strong> Fees, schedule, class size, teaching approach, or learning level.</p>
+            <textarea id="questions" name="questions" placeholder="Long-answer text"></textarea>
+          </div>
+        </section>
+
+        <section class="form-card privacy">
+          <h3 class="section-title">Privacy &amp; consent</h3>
+
+          <div class="field-block">
+            <label class="required" for="consent">🔒 Privacy &amp; Consent</label>
+            <p class="lead">We will only use your information to respond to this registration.</p>
+
+            <label class="option">
+              <input id="consent" name="consent" type="checkbox" value="Yes" required />
+              I consent to Magic Math Master contacting me about my registration and using my information for this purpose.
+            </label>
+
+            <div class="field-block" style="margin-top: 16px;">
+              <label for="promoConsent">📣🖼️🎥 Optional – Media Consent</label>
+              <p class="note">
+                Magic Math Master may occasionally share examples of student work or achievement (for example, on our website)
+                for educational or promotional purposes. Students may be identified by first name and initial only
+                (e.g. “Ben S, Year 4”), and no sensitive personal information will be shared. Giving consent is optional and you
+                may withdraw it at any time by contacting us.
+              </p>
+
+              <input type="hidden" name="promo_consent" value="No" />
+              <label class="option">
+                <input id="promoConsent" name="promo_consent" type="checkbox" value="Yes" />
+                Yes, I consent to Magic Math Master sharing de-identified examples of my child’s work/achievement as described above.
+              </label>
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-amber">Submit registration</button>
+            <span class="small">🌸 When you’re ready, please click Submit to complete the registration.</span>
+          </div>
+        </section>
+      </form>
+    </div>
+  </main>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('registerForm');
+    const submitFrame = document.querySelector('iframe[name="registerSubmitFrame"]');
+    const checkboxGroup = [...document.querySelectorAll('input[name="register_for"]')];
+    const registerError = document.getElementById('registerError');
+
+    const modal = document.getElementById('thankYouModal');
+    const okBtn = document.getElementById('thankYouOkBtn');
+
+    let submissionPending = false;
+
+    function validatePrograms() {
+      const hasSelection = checkboxGroup.some(box => box.checked);
+      registerError.classList.toggle('show', !hasSelection);
+      checkboxGroup.forEach(box => box.setCustomValidity(hasSelection ? '' : 'Please select at least one program.'));
+      return hasSelection;
+    }
+
+    checkboxGroup.forEach(box => box.addEventListener('change', validatePrograms));
+
+    function syncSelectOther(select) {
+      const targetId = select.dataset.target;
+      const otherValue = select.dataset.otherValue;
+      if (!targetId || !otherValue) return;
+
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const isActive = select.value === otherValue;
+      target.classList.toggle('show', isActive);
+
+      const field = target.querySelector('input');
+      if (field) {
+        field.required = isActive;
+        if (!isActive) field.value = '';
+      }
+    }
+
+    document.querySelectorAll('select[data-target]').forEach(select => {
+      select.addEventListener('change', () => syncSelectOther(select));
+      syncSelectOther(select);
+    });
+
+    okBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // When iframe loads after submit → show thank you + reset
+    submitFrame.addEventListener('load', () => {
+      if (!submissionPending) return;
+
+      submissionPending = false;
+      modal.style.display = 'flex';
+
+      form.reset();
+      document.querySelectorAll('select[data-target]').forEach(select => syncSelectOther(select));
+      validatePrograms();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    form.addEventListener('submit', (event) => {
+      const programsValid = validatePrograms();
+      if (!programsValid || !form.checkValidity()) {
+        event.preventDefault();
+        form.reportValidity();
+        return;
+      }
+
+      submissionPending = true; // allow iframe load handler to trigger modal
+      // Do NOT preventDefault here; we WANT the normal submit into the iframe.
+    });
+</script>

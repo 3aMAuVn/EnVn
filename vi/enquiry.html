@@ -1,0 +1,110 @@
+---
+layout: default
+lang: vi
+title: "Gửi yêu cầu | Magic Math Master"
+page_styles: |
+  /* Page-only bits */
+      html, body { overflow-x:hidden; }
+  
+      /* Keep this page aligned with your site container */
+      .wrap{
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 18px 40px;
+      }
+  
+      /* Form card */
+      .form-card{
+        border: 1px solid rgba(0,0,0,.12);
+        background:#fff;
+        border-radius: 18px;
+        overflow:hidden;
+        box-shadow: 0 10px 26px rgba(0,0,0,.08);
+      }
+      .form-card-head{
+        padding: 14px 16px;
+        border-bottom: 1px solid rgba(0,0,0,.08);
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:12px;
+        flex-wrap:wrap;
+      }
+      .form-card-title{ margin:0; font-size: 18px; font-weight: 1000; }
+  
+      .iframe-wrap{
+        position:relative;
+        width:100%;
+        padding-top: 135%; /* adjust height: try 120%–170% */
+      }
+      .iframe-wrap iframe{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        border:0;
+      }
+  
+      /* Minor: make hero buttons sit nicely */
+      .hero-snap-cta .btn{ margin: 0; }
+---
+
+<!-- ===== HERO (same “hero-snap” format as programs.html) ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-snap">
+
+        <div class="hero-snap-grid">
+          <div>
+            <h1 class="hero-snap-title">Tư vấn</h1>
+            <div class="hero-snap-tagline">Gửi câu hỏi của bạn — chúng tôi sẽ phản hồi sớm nhất có thể</div>
+          </div>
+
+          <div class="hero-snap-logoBox" aria-hidden="true">
+            <img src="{{ site.baseurl }}/assets/logo.png" alt="Logo Magic Math Master" loading="lazy" />
+          </div>
+        </div>
+
+        <p class="hero-snap-desc">
+          Hãy cho chúng tôi biết <b>lớp</b> của con bạn, mục tiêu (<b>bắt kịp / theo kịp / vượt lên</b>), và các nội dung bạn muốn được hỗ trợ.
+          Chúng tôi sẽ gợi ý bước tiếp theo phù hợp nhất.
+        </p>
+
+        <div class="hero-snap-checks">
+          <span>✓ Hướng dẫn bước tiếp theo rõ ràng</span>
+          <span>✓ Giao tiếp thân thiện</span>
+          <span>✓ Dạy học ưu tiên xây dựng tự tin</span>
+        </div>
+
+        <div class="hero-snap-cta">
+          <a class="btn btn-outline" href="{{ '/index.html' | relative_url }}">← Về trang chủ</a>
+          <a class="btn btn-success" href="#enquiry-form">Điền biểu mẫu</a>
+          <a class="btn btn-amber" target="_blank" rel="noopener"
+             href="https://forms.gle/FT16LedmpFi117QK9">
+            Mở tab mới
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORM ===== -->
+  <main class="wrap">
+    <section class="section" id="enquiry-form">
+      <div class="form-card">
+        <div class="form-card-head">
+          <h2 class="form-card-title">Magic Math Master — Biểu mẫu tư vấn</h2>
+        </div>
+
+        <div class="iframe-wrap">
+          <iframe
+            loading="lazy"
+            src="https://forms.gle/FT16LedmpFi117QK9">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same as other pages) ===== -->
